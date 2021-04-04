@@ -1,4 +1,4 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity('orders')
 class Order{
@@ -14,10 +14,8 @@ class Order{
     @Column()
     quantity:number;
 
-    @Column("double(10,2)")
+    @Column("double")
     price:number;
-
-
 
 }
 
