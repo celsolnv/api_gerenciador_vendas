@@ -8,6 +8,11 @@ const clientController = new ClientController();
 const productController = new ProductController();
 const orderController = new OrderController();
 
+router.get("/",(req,res)=>{
+    console.log("Bem vindo a minha aplicação");
+    return res.json({"message":"Bem vindo"})
+})
+
 router.post("/clients",clientController.create);
 router.delete("/clients",clientController.delete);
 router.get("/clients",clientController.show);
