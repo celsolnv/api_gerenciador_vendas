@@ -23,6 +23,9 @@ router.get("/products",productController.show);
 
 router.post("/orders",orderController.create);
 router.get("/orders",orderController.show);
+router.get("/orders/:id",orderController.showOneOrder);
+router.put("/orders",orderController.update);
+router.delete("/orders/:id",orderController.delete);
 
 
 export {router}
