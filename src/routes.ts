@@ -8,6 +8,11 @@ const clientController = new ClientController();
 const productController = new ProductController();
 const orderController = new OrderController();
 
+router.get("/",(req,res)=>{
+    console.log("Bem vindo a minha aplicação");
+    return res.json({"message":"Bem vindo"})
+})
+
 router.post("/clients",clientController.create);
 router.delete("/clients",clientController.delete);
 router.get("/clients",clientController.show);
@@ -18,6 +23,9 @@ router.get("/products",productController.show);
 
 router.post("/orders",orderController.create);
 router.get("/orders",orderController.show);
+router.get("/orders/:id",orderController.showOneOrder);
+router.put("/orders",orderController.update);
+router.delete("/orders/:id",orderController.delete);
 
 
 export {router}
